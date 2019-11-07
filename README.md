@@ -19,7 +19,37 @@ https://severalnines.com/resources/tutorials/galera-cluster-mysql-tutorial
 
 ## 3. Performance MaxScale 
 
+### 3a. RTT determines tps 
+
 Good article on performance MaxScale 
+
+https://severalnines.com/database-blog/improve-performance-galera-cluster-mysql-or-mariadb
+
+as is:
+tps restricted by RTT (Round Trip Time)
+
+Quote ():
+"[In a Galera cluster] a given row can’t be modified more than once per RTT"
+
+Hence, transactions per second can be estimated by dividing RTT (in second) into 1 second:
+
+Minimum tps: 1 / 0.00134 (max RTT) = 746.26 ~ 746 tps
+Average tps: 1 / 0.000431 (avg RTT) = 2320.19 ~ 2320 tps
+Maximum tps: 1 / 0.000111 (min RTT) = 9009.01 ~ 9009 tps
+
+Slowest node tears performance down. 
+
+### 3b. Transaction Size is crucial 
+
+ - After the writeset is transferred, there will be a certification process. 
+ - Certification is a process to determine whether or not the node can apply the writeset. 
+ - Galera generates MD5 checksum pseudo keys from every full row. 
+ - The cost of certification depends on the size of the writeset, which translates into a number of unique key lookups into the certification index (a hash table). 
+ - If you update 500,000 rows in a single transaction, for example:
+
+```
+UPDATE mydb.settings SET success = 1;
+```
 
 ## 4. What does gcomm mean (e.g. in gcomm://) 
 
