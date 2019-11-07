@@ -32,6 +32,7 @@ Write set Replication
 ## 6. Healthiness Indicator of Nodes 
 
 ```
+# Show status like '%wsrep%'
 wsrep_cluster_state: Primary
 wsrep_local_state_comment: Synced
 wsrep_ready: On
