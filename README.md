@@ -96,6 +96,10 @@ Query OK, 0 rows affected (5 min 19.59 sec)
 RSU automatically switched the local node to Donor/Desynced state, to ensure it will not impact
 the rest of the cluster
 
-## MySQL-Performance pdf ##
+## 8. MySQL-Performance pdf ##
 
 http://schulung.t3isp.de/documents/pdfs/mysql/mysql-performance.pdf
+
+##  9. Node Failure and Recovery (Technical Background) 
+
+https://galeracluster.com/library/documentation/recovery.html
