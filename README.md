@@ -51,6 +51,15 @@ Slowest node tears performance down.
 UPDATE mydb.settings SET success = 1;
 ```
 
+### 3c. Parallel Slave Threads 
+
+```
+To get the best out of this, we need to know two things:
+
+The number of cores the server has.
+The value of wsrep_cert_deps_distance status.
+```
+
 ## 4. What does gcomm mean (e.g. in gcomm://) 
 
 Group communication 
