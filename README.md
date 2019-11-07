@@ -17,7 +17,7 @@ with LESS than 3 Servers
 
 https://severalnines.com/resources/tutorials/galera-cluster-mysql-tutorial
 
-## 3. Performance MaxScale 
+## 3. Performance Galera Cluster  
 
 ### 3a. RTT determines tps 
 
