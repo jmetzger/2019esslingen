@@ -103,3 +103,14 @@ http://schulung.t3isp.de/documents/pdfs/mysql/mysql-performance.pdf
 ##  9. Node Failure and Recovery (Technical Background) 
 
 https://galeracluster.com/library/documentation/recovery.html
+
+## 10. Maxscale - maxadmin cli 
+
+Best: over socket (since 2.0)
+```
+[CLI]
+type=listener
+service=MaxAdmin
+protocol=maxscaled
+socket=default
+``
